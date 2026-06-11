@@ -1,0 +1,1800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Fall 2026 Marketing Strategy</title>
+    <style>
+      :root {
+        --navy: #1a2744;
+        --navy-light: #2a3d5e;
+        --slate: #475569;
+        --slate-light: #94a3b8;
+        --gold: #d4a843;
+        --gold-light: #f0dca0;
+        --gold-bg: #fdf8ed;
+        --tier1: #1e40af;
+        --tier1-bg: #eff6ff;
+        --tier1-border: #bfdbfe;
+        --tier2: #b45309;
+        --tier2-bg: #fffbeb;
+        --tier2-border: #fde68a;
+        --tier3: #047857;
+        --tier3-bg: #ecfdf5;
+        --tier3-border: #a7f3d0;
+        --bg: #f8fafc;
+        --white: #ffffff;
+        --border: #e2e8f0;
+        --text: #1e293b;
+        --text-light: #64748b;
+        --success: #059669;
+        --warning: #d97706;
+        --danger: #dc2626;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--navy) 0%,
+          var(--navy-light) 100%
+        );
+        color: white;
+        padding: 3rem 2rem 2.5rem;
+        text-align: center;
+      }
+      .header-badge {
+        display: inline-block;
+        background: rgba(212, 168, 67, 0.2);
+        border: 1px solid var(--gold);
+        color: var(--gold-light);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 1rem;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+      }
+      .header h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .header p {
+        color: var(--slate-light);
+        font-size: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .nav-container {
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+      .nav-tabs {
+        display: flex;
+        max-width: 1100px;
+        margin: 0 auto;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .nav-tab {
+        padding: 1rem 1.25rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-light);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        transition: all 0.2s;
+        background: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font-family: inherit;
+      }
+      .nav-tab:hover {
+        color: var(--navy);
+      }
+      .nav-tab.active {
+        color: var(--navy);
+        border-bottom-color: var(--gold);
+        font-weight: 600;
+      }
+
+      .main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 4rem;
+      }
+      .section {
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+
+      .card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.75rem;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      }
+      .card h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: var(--navy);
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.01em;
+      }
+      .section-subtitle {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+      }
+
+      .metrics-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+      .metric-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        text-align: center;
+      }
+      .metric-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--navy);
+      }
+      .metric-label {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        margin-top: 0.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .tier-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 0.2rem 0.7rem;
+        border-radius: 12px;
+      }
+      .tier-1 {
+        background: var(--tier1-bg);
+        color: var(--tier1);
+        border: 1px solid var(--tier1-border);
+      }
+      .tier-2 {
+        background: var(--tier2-bg);
+        color: var(--tier2);
+        border: 1px solid var(--tier2-border);
+      }
+      .tier-3 {
+        background: var(--tier3-bg);
+        color: var(--tier3);
+        border: 1px solid var(--tier3-border);
+      }
+
+      .program-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .program-card {
+        background: var(--white);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border-left: 4px solid;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .program-card.t1 {
+        border-left-color: var(--tier1);
+      }
+      .program-card.t2 {
+        border-left-color: var(--tier2);
+      }
+      .program-card.t3 {
+        border-left-color: var(--tier3);
+      }
+      .program-card .program-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .program-card h4 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .program-meta {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+        color: var(--slate);
+        margin-top: 0.5rem;
+      }
+      .program-meta dt {
+        font-weight: 600;
+        color: var(--text-light);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .program-meta dd {
+        margin-bottom: 0.4rem;
+      }
+      .program-channels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.75rem;
+      }
+      .channel-tag {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px;
+        background: var(--bg);
+        color: var(--slate);
+        border: 1px solid var(--border);
+        font-weight: 500;
+      }
+
+      .timeline-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 2rem;
+      }
+      .timeline-table {
+        width: 100%;
+        min-width: 900px;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.82rem;
+      }
+      .timeline-table th {
+        background: var(--navy);
+        color: white;
+        padding: 0.75rem 0.5rem;
+        font-weight: 600;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+      .timeline-table th:first-child {
+        text-align: left;
+        border-radius: 8px 0 0 0;
+        min-width: 160px;
+      }
+      .timeline-table th:last-child {
+        border-radius: 0 8px 0 0;
+      }
+      .timeline-table td {
+        padding: 0.6rem 0.4rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+        vertical-align: top;
+      }
+      .timeline-table td:first-child {
+        text-align: left;
+        font-weight: 600;
+        color: var(--navy);
+        background: var(--white);
+        min-width: 160px;
+      }
+      .timeline-table tr:last-child td {
+        border-bottom: none;
+      }
+      .timeline-table tbody tr:hover {
+        background: rgba(26, 39, 68, 0.02);
+      }
+
+      .tl-bar {
+        display: inline-block;
+        border-radius: 4px;
+        padding: 0.2rem 0.4rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: white;
+        width: 92%;
+      }
+      .tl-full {
+        background: var(--tier1);
+      }
+      .tl-ramp-down {
+        background: linear-gradient(90deg, var(--tier1), var(--tier1-border));
+        color: var(--tier1);
+      }
+      .tl-maint {
+        background: var(--tier1-border);
+        color: var(--tier1);
+      }
+      .tl-done {
+        background: #e2e8f0;
+        color: var(--slate);
+      }
+      .tl-prep {
+        background: var(--tier2-border);
+        color: var(--tier2);
+      }
+      .tl-active {
+        background: var(--tier2);
+      }
+      .tl-push {
+        background: var(--danger);
+      }
+      .tl-enable-prep {
+        background: var(--tier3-border);
+        color: var(--tier3);
+      }
+      .tl-enable {
+        background: var(--tier3);
+      }
+      .tl-boost {
+        background: linear-gradient(90deg, var(--tier3), var(--success));
+      }
+
+      .phase-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      }
+      .phase-header {
+        padding: 1.25rem 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+        transition: background 0.15s;
+      }
+      .phase-header:hover {
+        background: var(--bg);
+      }
+      .phase-header h3 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--navy);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .phase-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .phase-dates {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+      .phase-toggle {
+        font-size: 1.2rem;
+        color: var(--slate-light);
+        transition: transform 0.2s;
+      }
+      .phase-card.open .phase-toggle {
+        transform: rotate(180deg);
+      }
+      .phase-body {
+        display: none;
+        padding: 0 1.5rem 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+      .phase-card.open .phase-body {
+        display: block;
+        padding-top: 1.25rem;
+      }
+
+      .task-list {
+        list-style: none;
+      }
+      .task-list li {
+        padding: 0.6rem 0;
+        border-bottom: 1px solid #f1f5f9;
+        font-size: 0.88rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .task-list li:last-child {
+        border-bottom: none;
+      }
+      .task-owner {
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 0.15rem 0.5rem;
+        border-radius: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+      .owner-ei {
+        background: #ede9fe;
+        color: #6d28d9;
+      }
+      .owner-jesse {
+        background: #fce7f3;
+        color: #be185d;
+      }
+      .owner-director {
+        background: #ecfdf5;
+        color: #047857;
+      }
+
+      .gate-box {
+        background: var(--gold-bg);
+        border: 1px solid var(--gold);
+        border-radius: 8px;
+        padding: 1rem 1.25rem;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+      }
+      .gate-box strong {
+        color: var(--navy);
+      }
+
+      .kit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+      }
+      .kit-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      }
+      .kit-card h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .kit-list {
+        list-style: none;
+        font-size: 0.85rem;
+      }
+      .kit-list li {
+        padding: 0.35rem 0;
+        color: var(--slate);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .kit-list li::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin-top: 0.45rem;
+        flex-shrink: 0;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      .action-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      }
+      .action-priority {
+        flex-shrink: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-top: 0.45rem;
+      }
+      .priority-critical {
+        background: var(--danger);
+      }
+      .priority-warning {
+        background: var(--warning);
+      }
+      .priority-note {
+        background: var(--tier1);
+      }
+      .action-content h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 0.2rem;
+      }
+      .action-content p {
+        font-size: 0.82rem;
+        color: var(--text-light);
+      }
+      .action-meta {
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 0.4rem;
+        font-size: 0.72rem;
+      }
+      .action-meta span {
+        padding: 0.15rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+      .meta-deadline {
+        background: #fef2f2;
+        color: var(--danger);
+      }
+      .meta-owner-ei {
+        background: #ede9fe;
+        color: #6d28d9;
+      }
+      .meta-owner-jesse {
+        background: #fce7f3;
+        color: #be185d;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-light);
+        font-size: 0.8rem;
+        border-top: 1px solid var(--border);
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          padding: 2rem 1.25rem;
+        }
+        .header h1 {
+          font-size: 1.5rem;
+        }
+        .main {
+          padding: 1.25rem 1rem;
+        }
+        .metrics-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        .program-meta {
+          grid-template-columns: 1fr;
+        }
+        .nav-tab {
+          padding: 0.75rem 1rem;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-badge">Strategic Plan</div>
+      <h1>ICSW Fall 2026 Marketing Strategy</h1>
+      <p>
+        Tiered marketing plan for 5 programs &mdash; balancing MA/PhD enrollment
+        with 3 new certificate program launches
+      </p>
+    </div>
+
+    <div class="nav-container">
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-tab="overview">Overview</button>
+        <button class="nav-tab" data-tab="programs">Program Tiers</button>
+        <button class="nav-tab" data-tab="timeline">Timeline</button>
+        <button class="nav-tab" data-tab="outreach">Director Outreach</button>
+        <button class="nav-tab" data-tab="actions">Action Items</button>
+      </div>
+    </div>
+
+    <div class="main">
+      <!-- OVERVIEW -->
+      <div class="section active" id="overview">
+        <h2 class="section-title">Strategy at a Glance</h2>
+        <p class="section-subtitle">
+          Three new certificate programs launch alongside the existing MA and
+          PhD this fall. This plan tiers investment by need &mdash; putting the
+          most marketing effort where it moves the needle most, while enabling
+          well-known program directors to recruit through their own networks.
+        </p>
+
+        <div class="metrics-row">
+          <div class="metric-card">
+            <div class="metric-value">5</div>
+            <div class="metric-label">Programs to Market</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">55&ndash;75</div>
+            <div class="metric-label">Total Seat Target</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">Sept 2&ndash;15</div>
+            <div class="metric-label">Term Start Window</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">3</div>
+            <div class="metric-label">Investment Tiers</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>The Core Idea: Tiered Investment</h3>
+          <p
+            style="font-size: 0.9rem; color: var(--slate); margin-bottom: 1rem"
+          >
+            Not every program needs the same level of marketing. The MA and PhD
+            are the revenue engines with full ad campaigns already running since
+            March. Certificate programs benefit from well-known directors who
+            can drive enrollment through their own networks. Our job is to give
+            them the tools to do that effectively, while providing a shared ad
+            campaign that supports all three.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+            <div
+              style="
+                flex: 1;
+                min-width: 200px;
+                padding: 1rem;
+                background: var(--tier1-bg);
+                border-radius: 8px;
+                border: 1px solid var(--tier1-border);
+              "
+            >
+              <span class="tier-badge tier-1"
+                >Tier 1 &mdash; Full Campaign</span
+              >
+              <p
+                style="
+                  font-size: 0.82rem;
+                  color: var(--slate);
+                  margin-top: 0.5rem;
+                "
+              >
+                <strong>MA &amp; PhD Programs</strong><br />Dedicated Google Ads
+                campaigns (each with their own landing pages), Meta ads,
+                Mailchimp sequences, social content. Running since early March.
+              </p>
+            </div>
+            <div
+              style="
+                flex: 1;
+                min-width: 200px;
+                padding: 1rem;
+                background: var(--tier2-bg);
+                border-radius: 8px;
+                border: 1px solid var(--tier2-border);
+              "
+            >
+              <span class="tier-badge tier-2"
+                >Tier 2 &mdash; Dedicated Support</span
+              >
+              <p
+                style="
+                  font-size: 0.82rem;
+                  color: var(--slate);
+                  margin-top: 0.5rem;
+                "
+              >
+                <strong>Latinx Consultation Group</strong><br />Most
+                marketing-dependent of the three certificates. Gets outreach
+                emails + shared certificate ad campaign support.
+              </p>
+            </div>
+            <div
+              style="
+                flex: 1;
+                min-width: 200px;
+                padding: 1rem;
+                background: var(--tier3-bg);
+                border-radius: 8px;
+                border: 1px solid var(--tier3-border);
+              "
+            >
+              <span class="tier-badge tier-3"
+                >Tier 3 &mdash; Director Enablement</span
+              >
+              <p
+                style="
+                  font-size: 0.82rem;
+                  color: var(--slate);
+                  margin-top: 0.5rem;
+                "
+              >
+                <strong>JPC (Bill) &amp; Couples Therapy (Carla)</strong
+                ><br />Directors are the primary recruitment engine. We provide
+                outreach emails and the shared certificate landing page.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Ad Campaign Structure</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--slate);
+              margin-bottom: 0.75rem;
+            "
+          >
+            We keep the ad strategy clean and avoid cannibalizing our own
+            budget:
+          </p>
+          <ul
+            style="
+              font-size: 0.88rem;
+              color: var(--slate);
+              padding-left: 1.25rem;
+              list-style: disc;
+            "
+          >
+            <li style="margin-bottom: 0.3rem">
+              <strong>MA Program</strong> &mdash; its own dedicated Google Ads
+              campaign with its own landing page (already running since March,
+              closes end of June)
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>PhD Program</strong> &mdash; its own dedicated Google Ads
+              campaign with its own landing page (already running since March,
+              closes mid-July)
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>All 3 Certificates</strong> &mdash; one shared Google Ads
+              campaign pointing to a single certificate landing page on the ICSW
+              website, with links out to each individual program page
+            </li>
+          </ul>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-light);
+              margin-top: 0.75rem;
+            "
+          >
+            This approach keeps each program's ad budget separate and avoids
+            bidding on the same keywords against ourselves. As MA and PhD
+            campaigns close, the freed budget shifts to the certificate
+            campaign.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Why This Approach</h3>
+          <ul
+            style="
+              font-size: 0.88rem;
+              color: var(--slate);
+              padding-left: 1.25rem;
+              list-style: disc;
+            "
+          >
+            <li style="margin-bottom: 0.3rem">
+              <strong>Protects MA/PhD revenue</strong> &mdash; these programs
+              keep the lights on and have had full campaigns running since March
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>Maximizes director reach</strong> &mdash; a personal email
+              from Bill or Carla converts better than a cold Google Ad for their
+              niche audiences
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>One campaign, three programs</strong> &mdash; the shared
+              certificate landing page means we run one efficient campaign
+              instead of three small ones
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>Cross-pollination</strong> &mdash; someone clicking a
+              certificate ad might discover all three options and find the right
+              fit
+            </li>
+            <li>
+              <strong>Infrastructure built this year carries forward</strong>
+              &mdash; the landing page, standardized program pages, and outreach
+              templates are all reusable for future enrollment cycles
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROGRAMS -->
+      <div class="section" id="programs">
+        <h2 class="section-title">Program Tiers</h2>
+        <p class="section-subtitle">
+          Each program is assigned a tier based on how much external marketing
+          support it needs to fill seats. Tier determines ad allocation,
+          outreach effort, and level of support from Earned Impact.
+        </p>
+
+        <div class="program-grid">
+          <div class="program-card t1">
+            <div class="program-header">
+              <h4>Master of Arts (MA) in Clinical Psychology</h4>
+              <span class="tier-badge tier-1">Tier 1</span>
+            </div>
+            <dl class="program-meta">
+              <dt>Seat Target</dt>
+              <dd>20&ndash;25 enrolled</dd>
+              <dt>Current Status</dt>
+              <dd>28 admits, 24 enrolled (strong)</dd>
+              <dt>Application Deadline</dt>
+              <dd>End of June 2026</dd>
+              <dt>Campaign Status</dt>
+              <dd>
+                Running since early March &mdash; own ads + own landing page
+              </dd>
+            </dl>
+            <div class="program-channels">
+              <span class="channel-tag">Google Ads (dedicated)</span>
+              <span class="channel-tag">Meta Ads</span>
+              <span class="channel-tag">Mailchimp Sequences</span>
+              <span class="channel-tag">Social Content</span>
+            </div>
+          </div>
+
+          <div class="program-card t1">
+            <div class="program-header">
+              <h4>Doctor of Psychology (PhD)</h4>
+              <span class="tier-badge tier-1">Tier 1</span>
+            </div>
+            <dl class="program-meta">
+              <dt>Seat Target</dt>
+              <dd>15&ndash;20 enrolled</dd>
+              <dt>Current Status</dt>
+              <dd>
+                10 admits, 7 enrolled (up from 3 on June 1 &mdash; strong
+                momentum)
+              </dd>
+              <dt>Application Deadline</dt>
+              <dd>Mid-July 2026</dd>
+              <dt>Campaign Status</dt>
+              <dd>
+                Running since early March &mdash; own ads + own landing page
+              </dd>
+            </dl>
+            <div class="program-channels">
+              <span class="channel-tag">Google Ads (dedicated)</span>
+              <span class="channel-tag">Meta Ads</span>
+              <span class="channel-tag">Mailchimp Sequences</span>
+              <span class="channel-tag">Social Content</span>
+            </div>
+          </div>
+
+          <div class="program-card t2">
+            <div class="program-header">
+              <h4>Latinx Consultation Group Certificate</h4>
+              <span class="tier-badge tier-2">Tier 2</span>
+            </div>
+            <dl class="program-meta">
+              <dt>Seat Target</dt>
+              <dd>10&ndash;15 enrolled</dd>
+              <dt>Director</dt>
+              <dd>Mirari</dd>
+              <dt>Key Detail</dt>
+              <dd>
+                Phase 2 &mdash; some returning students from Year 1 may
+                re-enroll
+              </dd>
+              <dt>Why Tier 2</dt>
+              <dd>
+                Director has a base but likely needs more external support to
+                fill new seats than Bill or Carla
+              </dd>
+            </dl>
+            <div class="program-channels">
+              <span class="channel-tag">Shared Certificate Ad Campaign</span>
+              <span class="channel-tag">Certificate Landing Page</span>
+              <span class="channel-tag">Director Outreach Emails</span>
+              <span class="channel-tag">Social Content</span>
+            </div>
+          </div>
+
+          <div class="program-card t3">
+            <div class="program-header">
+              <h4>
+                Joseph Palombo Center (JPC) &mdash; Neuroscience &amp;
+                Psychodynamic Psychotherapy Certificate
+              </h4>
+              <span class="tier-badge tier-3">Tier 3</span>
+            </div>
+            <dl class="program-meta">
+              <dt>Seat Target</dt>
+              <dd>10&ndash;15 enrolled</dd>
+              <dt>Director</dt>
+              <dd>William D. Gieseke, Ph.D. (Bill)</dd>
+              <dt>Format</dt>
+              <dd>
+                24 weeks, virtual online, Fridays 1&ndash;4 PM CT (Aug
+                2026&ndash;May 2027)
+              </dd>
+              <dt>Tuition</dt>
+              <dd>$3,100 &nbsp;|&nbsp; 72 CEU hours</dd>
+              <dt>Application Deadline</dt>
+              <dd>July 30, 2026</dd>
+              <dt>Why Tier 3</dt>
+              <dd>
+                "Almost as big a voice as Carla" &mdash; will do most of the
+                recruitment himself. Built the full program brief and page
+                himself.
+              </dd>
+            </dl>
+            <p
+              style="
+                font-size: 0.82rem;
+                color: var(--slate);
+                margin-top: 0.75rem;
+              "
+            >
+              <strong>Target audience:</strong> Post-master's and postgraduate
+              clinicians with 3+ years of experience. Clinical social workers,
+              psychologists, counselors, psychiatrists, psychoanalytic
+              candidates, supervisors, and clinical educators seeking advanced
+              neuroscience-informed psychodynamic formulation training.
+            </p>
+            <div class="program-channels">
+              <span class="channel-tag">Certificate Landing Page</span>
+              <span class="channel-tag">Director Outreach Emails</span>
+              <span class="channel-tag">1 LinkedIn Post</span>
+            </div>
+          </div>
+
+          <div class="program-card t3">
+            <div class="program-header">
+              <h4>Couples Therapy Certificate</h4>
+              <span class="tier-badge tier-3">Tier 3</span>
+            </div>
+            <dl class="program-meta">
+              <dt>Seat Target</dt>
+              <dd>10&ndash;15 enrolled</dd>
+              <dt>Director</dt>
+              <dd>Carla</dd>
+              <dt>Key Detail</dt>
+              <dd>
+                Starts slightly later (~mid-September). Page exists but needs
+                reformatting to match Bill's layout.
+              </dd>
+              <dt>Why Tier 3</dt>
+              <dd>
+                Carla is a very well-known name &mdash; her reputation fills
+                seats. Page content is there, just needs restructuring.
+              </dd>
+            </dl>
+            <div class="program-channels">
+              <span class="channel-tag">Certificate Landing Page</span>
+              <span class="channel-tag">Director Outreach Emails</span>
+              <span class="channel-tag">1 LinkedIn Post</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.5rem">
+          <h3>Example: Bill's At-a-Glance Brief (JPC)</h3>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-light);
+              margin-bottom: 1rem;
+            "
+          >
+            This is the format we need from all three program directors. Bill
+            provided this for the JPC &mdash; Mirari and Carla should use this
+            as their template.
+          </p>
+          <div style="overflow-x: auto">
+            <table
+              style="width: 100%; border-collapse: collapse; font-size: 0.85rem"
+            >
+              <tr style="border-bottom: 1px solid var(--border)">
+                <td
+                  style="
+                    padding: 0.6rem 1rem;
+                    font-weight: 600;
+                    color: var(--navy);
+                    width: 160px;
+                    vertical-align: top;
+                  "
+                >
+                  Designed for
+                </td>
+                <td style="padding: 0.6rem 1rem; color: var(--slate)">
+                  Post-master's and postgraduate clinicians with 3 years of
+                  experience seeking advanced, clinically grounded training.
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border)">
+                <td
+                  style="
+                    padding: 0.6rem 1rem;
+                    font-weight: 600;
+                    color: var(--navy);
+                    vertical-align: top;
+                  "
+                >
+                  Program format
+                </td>
+                <td style="padding: 0.6rem 1rem; color: var(--slate)">
+                  24-week certificate sequence. 120 minutes of didactic
+                  learning, followed by 60 minutes of clinically focused case
+                  discussion.
+                </td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border)">
+                <td
+                  style="
+                    padding: 0.6rem 1rem;
+                    font-weight: 600;
+                    color: var(--navy);
+                    vertical-align: top;
+                  "
+                >
+                  Why it stands out
+                </td>
+                <td style="padding: 0.6rem 1rem; color: var(--slate)">
+                  A rigorous, non-reductionistic model that connects
+                  neuroscience with subjectivity, development, and the
+                  therapeutic relationship.
+                </td>
+              </tr>
+              <tr>
+                <td
+                  style="
+                    padding: 0.6rem 1rem;
+                    font-weight: 600;
+                    color: var(--navy);
+                    vertical-align: top;
+                  "
+                >
+                  Program promise
+                </td>
+                <td style="padding: 0.6rem 1rem; color: var(--slate)">
+                  Learn to translate complex theory into clear formulation,
+                  better timing, and more effective intervention.
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="section" id="timeline">
+        <h2 class="section-title">Marketing Timeline</h2>
+        <p class="section-subtitle">
+          Full picture from the start of MA/PhD campaigns through certificate
+          close. Three phases from today forward, with gates between each.
+        </p>
+
+        <div class="timeline-container">
+          <table class="timeline-table">
+            <thead>
+              <tr>
+                <th>Program / Track</th>
+                <th>
+                  <span style="font-size: 0.68rem">Mar&ndash;Jun 11</span
+                  ><br />Already Done
+                </th>
+                <th>
+                  Phase 1<br /><span
+                    style="
+                      font-weight: 400;
+                      text-transform: none;
+                      font-size: 0.68rem;
+                    "
+                    >Jun 11&ndash;30</span
+                  >
+                </th>
+                <th>
+                  Phase 2<br /><span
+                    style="
+                      font-weight: 400;
+                      text-transform: none;
+                      font-size: 0.68rem;
+                    "
+                    >Jul 1&ndash;31</span
+                  >
+                </th>
+                <th>
+                  Phase 3<br /><span
+                    style="
+                      font-weight: 400;
+                      text-transform: none;
+                      font-size: 0.68rem;
+                    "
+                    >Aug 1&ndash;15</span
+                  >
+                </th>
+                <th>
+                  Phase 4<br /><span
+                    style="
+                      font-weight: 400;
+                      text-transform: none;
+                      font-size: 0.68rem;
+                    "
+                    >Aug 16&ndash;Sep 5</span
+                  >
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  MA Program
+                  <span class="tier-badge tier-1" style="margin-left: 0.4rem"
+                    >T1</span
+                  >
+                </td>
+                <td><span class="tl-bar tl-full">Full Ads</span></td>
+                <td><span class="tl-bar tl-ramp-down">Closing</span></td>
+                <td><span class="tl-bar tl-done">Closed</span></td>
+                <td><span class="tl-bar tl-done">Closed</span></td>
+                <td><span class="tl-bar tl-done">Closed</span></td>
+              </tr>
+              <tr>
+                <td>
+                  PhD Program
+                  <span class="tier-badge tier-1" style="margin-left: 0.4rem"
+                    >T1</span
+                  >
+                </td>
+                <td><span class="tl-bar tl-full">Full Ads</span></td>
+                <td><span class="tl-bar tl-full">Full Ads</span></td>
+                <td><span class="tl-bar tl-ramp-down">Closing</span></td>
+                <td><span class="tl-bar tl-done">Closed</span></td>
+                <td><span class="tl-bar tl-done">Closed</span></td>
+              </tr>
+              <tr>
+                <td>
+                  Latinx Consult.
+                  <span class="tier-badge tier-2" style="margin-left: 0.4rem"
+                    >T2</span
+                  >
+                </td>
+                <td><span class="tl-bar tl-prep">Not started</span></td>
+                <td><span class="tl-bar tl-prep">Prep</span></td>
+                <td>
+                  <span class="tl-bar tl-active">Cert. Ads + Outreach</span>
+                </td>
+                <td><span class="tl-bar tl-push">Full Push</span></td>
+                <td><span class="tl-bar tl-push">Final Push</span></td>
+              </tr>
+              <tr>
+                <td>
+                  JPC (Bill)
+                  <span class="tier-badge tier-3" style="margin-left: 0.4rem"
+                    >T3</span
+                  >
+                </td>
+                <td><span class="tl-bar tl-enable-prep">Not started</span></td>
+                <td><span class="tl-bar tl-enable-prep">Prep</span></td>
+                <td><span class="tl-bar tl-enable">Dir. Outreach</span></td>
+                <td><span class="tl-bar tl-enable">Dir. + Landing Pg</span></td>
+                <td><span class="tl-bar tl-boost">Final Boost</span></td>
+              </tr>
+              <tr>
+                <td>
+                  Couples (Carla)
+                  <span class="tier-badge tier-3" style="margin-left: 0.4rem"
+                    >T3</span
+                  >
+                </td>
+                <td><span class="tl-bar tl-enable-prep">Not started</span></td>
+                <td><span class="tl-bar tl-enable-prep">Prep</span></td>
+                <td><span class="tl-bar tl-enable">Dir. Outreach</span></td>
+                <td><span class="tl-bar tl-enable">Dir. + Landing Pg</span></td>
+                <td><span class="tl-bar tl-boost">Final Boost</span></td>
+              </tr>
+              <tr>
+                <td>Cert. Landing Page</td>
+                <td><span class="tl-bar tl-done">N/A</span></td>
+                <td>
+                  <span class="tl-bar" style="background: var(--gold)"
+                    >Build</span
+                  >
+                </td>
+                <td>
+                  <span class="tl-bar" style="background: var(--success)"
+                    >Live</span
+                  >
+                </td>
+                <td>
+                  <span class="tl-bar" style="background: var(--success)"
+                    >Live</span
+                  >
+                </td>
+                <td>
+                  <span class="tl-bar" style="background: var(--success)"
+                    >Live</span
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Cert. Ad Campaign</td>
+                <td><span class="tl-bar tl-done">N/A</span></td>
+                <td><span class="tl-bar tl-prep">Keyword Prep</span></td>
+                <td><span class="tl-bar tl-active">Launch</span></td>
+                <td><span class="tl-bar tl-push">Full Budget</span></td>
+                <td><span class="tl-bar tl-push">Full Budget</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Phase Details -->
+        <div class="phase-card open">
+          <div
+            class="phase-header"
+            onclick="this.parentElement.classList.toggle('open')"
+          >
+            <h3>
+              <span class="phase-number">1</span> Foundation &amp; Prep
+              <span
+                class="phase-dates"
+                style="margin-left: auto; margin-right: 1rem"
+                >Jun 11 &ndash; Jun 30</span
+              >
+            </h3>
+            <span class="phase-toggle">&#9660;</span>
+          </div>
+          <div class="phase-body">
+            <p
+              style="
+                font-size: 0.88rem;
+                color: var(--slate);
+                margin-bottom: 1rem;
+              "
+            >
+              Get the certificate infrastructure in place. MA campaign wraps up
+              end of June. PhD still running at full budget.
+            </p>
+            <ul class="task-list">
+              <li>
+                <span class="task-owner owner-jesse">Jesse</span> Collect
+                at-a-glance briefs from Mirari and Carla (use Bill's JPC brief
+                as the template). Deadline: <strong>June 27</strong>.
+              </li>
+              <li>
+                <span class="task-owner owner-jesse">Jesse</span> Get President
+                Ramirez's review of Bill's JPC program page &mdash; this is the
+                template for all three.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Build
+                certificate landing page on current ICSW website &mdash; "Which
+                program is right for you?" format with at-a-glance info and
+                links to each program page.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span>
+                Standardize Couples Therapy and Latinx Consultation pages to
+                match Bill's JPC layout (content exists, just needs
+                reformatting).
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Keyword
+                mapping for the certificate ad campaign &mdash; identify terms
+                that don't overlap with existing MA/PhD campaigns.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Draft
+                outreach email campaign for each director (2&ndash;3 emails per
+                director) and one LinkedIn post per director.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> MA
+                campaign wrap-up: close out by end of June as application
+                deadline passes.
+              </li>
+            </ul>
+            <div class="gate-box">
+              <strong>Gate to Phase 2:</strong> Certificate landing page is
+              live. All three program pages are in uniform format. At-a-glance
+              briefs received (or fallback drafted from existing content).
+              Outreach emails drafted and ready for director review. Certificate
+              ad campaign keywords mapped.
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div
+            class="phase-header"
+            onclick="this.parentElement.classList.toggle('open')"
+          >
+            <h3>
+              <span class="phase-number">2</span> Certificate Launch + PhD Close
+              <span
+                class="phase-dates"
+                style="margin-left: auto; margin-right: 1rem"
+                >Jul 1 &ndash; Jul 31</span
+              >
+            </h3>
+            <span class="phase-toggle">&#9660;</span>
+          </div>
+          <div class="phase-body">
+            <p
+              style="
+                font-size: 0.88rem;
+                color: var(--slate);
+                margin-bottom: 1rem;
+              "
+            >
+              Certificate marketing goes live. PhD campaign runs through
+              mid-July deadline, then closes. As MA and PhD budgets free up,
+              they shift to the certificate campaign.
+            </p>
+            <ul class="task-list">
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Launch
+                shared certificate Google Ads campaign &mdash; one campaign, all
+                ads point to the certificate landing page.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> PhD
+                campaign continues through mid-July deadline, then winds down.
+              </li>
+              <li>
+                <span class="task-owner owner-director">Directors</span> Review
+                and send first outreach email to their personal networks and
+                listservs (using Earned Impact drafts). Suggested:
+                <strong>early July</strong>.
+              </li>
+              <li>
+                <span class="task-owner owner-director">Directors</span> Post
+                their LinkedIn announcement (one post each, drafted by Earned
+                Impact).
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Send
+                certificate program announcement via Mailchimp to ICSW community
+                list.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Social
+                content begins including certificate program awareness alongside
+                ongoing PhD content.
+              </li>
+            </ul>
+            <div class="gate-box">
+              <strong>Gate to Phase 3:</strong> Certificate ad campaign is
+              running. Directors have sent their first outreach email. PhD
+              campaign closed after mid-July deadline. Budget reallocation to
+              certificates is underway.
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div
+            class="phase-header"
+            onclick="this.parentElement.classList.toggle('open')"
+          >
+            <h3>
+              <span class="phase-number">3</span> Certificate Full Push
+              <span
+                class="phase-dates"
+                style="margin-left: auto; margin-right: 1rem"
+                >Aug 1 &ndash; Aug 15</span
+              >
+            </h3>
+            <span class="phase-toggle">&#9660;</span>
+          </div>
+          <div class="phase-body">
+            <p
+              style="
+                font-size: 0.88rem;
+                color: var(--slate);
+                margin-bottom: 1rem;
+              "
+            >
+              MA and PhD campaigns are closed. Full budget is now on
+              certificates. This is the critical window &mdash; the heaviest
+              push before the late August application window narrows.
+            </p>
+            <ul class="task-list">
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span>
+                Certificate ad campaign at full budget (freed from MA + PhD).
+              </li>
+              <li>
+                <span class="task-owner owner-director">Directors</span> Send
+                second outreach email &mdash; follow-up to previous contacts
+                with more detail on curriculum and application process.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Social
+                content shifts to certificate-heavy. Program highlights,
+                director features, "applications open" messaging.
+              </li>
+              <li>
+                <span class="task-owner owner-jesse">Jesse</span> Check in with
+                directors on enrollment pipeline. Flag any program significantly
+                below target for extra effort.
+              </li>
+            </ul>
+            <div class="gate-box">
+              <strong>Gate to Phase 4:</strong> Assess each certificate's
+              enrollment vs. target. Any program below 50% of target gets
+              escalated &mdash; consider additional outreach from Jesse, extra
+              social pushes, or an additional director email.
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div
+            class="phase-header"
+            onclick="this.parentElement.classList.toggle('open')"
+          >
+            <h3>
+              <span class="phase-number">4</span> Final Push &amp; Close
+              <span
+                class="phase-dates"
+                style="margin-left: auto; margin-right: 1rem"
+                >Aug 16 &ndash; Sep 5</span
+              >
+            </h3>
+            <span class="phase-toggle">&#9660;</span>
+          </div>
+          <div class="phase-body">
+            <p
+              style="
+                font-size: 0.88rem;
+                color: var(--slate);
+                margin-bottom: 1rem;
+              "
+            >
+              Last call. Certificate applications can be accepted through late
+              August / start of term. This is about converting anyone still on
+              the fence.
+            </p>
+            <ul class="task-list">
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span>
+                Certificate ads continue with urgency messaging: "Fall term
+                starts [date] &mdash; apply now."
+              </li>
+              <li>
+                <span class="task-owner owner-director">Directors</span> Final
+                outreach email &mdash; "last chance" messaging to their
+                networks.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> "Last
+                chance" Mailchimp email to the ICSW community list.
+              </li>
+              <li>
+                <span class="task-owner owner-ei">Earned Impact</span> Social:
+                urgency-style content, FAQs, "what to expect" posts for each
+                program.
+              </li>
+              <li>
+                <span class="task-owner owner-jesse">Jesse</span> Final
+                enrollment count. Note what worked for next year's planning.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIRECTOR OUTREACH -->
+      <div class="section" id="outreach">
+        <h2 class="section-title">Director Outreach</h2>
+        <p class="section-subtitle">
+          We draft the content, directors add their voice and send. The goal:
+          make it as close to "just hit send" as possible. This is not a full
+          social media campaign &mdash; it's targeted email outreach and one
+          LinkedIn post to leverage their existing networks.
+        </p>
+
+        <div class="kit-grid">
+          <div class="kit-card">
+            <h4>Email Campaign (2&ndash;3 emails per director)</h4>
+            <ul class="kit-list">
+              <li>
+                <strong>Email 1 &mdash; Announcement:</strong> "I'm launching a
+                new certificate program and I want you to know about it."
+                High-level overview, who it's for, link to program page.
+              </li>
+              <li>
+                <strong>Email 2 &mdash; Details + Apply:</strong> Curriculum
+                highlights, what participants gain, application process and
+                deadline, direct link to apply.
+              </li>
+              <li>
+                <strong>Email 3 &mdash; Last chance:</strong> Urgency messaging
+                as the late August window narrows. "Spots are filling &mdash;
+                apply by [date]."
+              </li>
+              <li>
+                Each email pre-drafted by Earned Impact in the director's voice.
+                Directors review, adjust tone, and send from their own email to
+                their own listservs and contacts.
+              </li>
+            </ul>
+          </div>
+          <div class="kit-card">
+            <h4>LinkedIn Post (1 per director)</h4>
+            <ul class="kit-list">
+              <li>
+                One program announcement post drafted by Earned Impact in the
+                director's voice.
+              </li>
+              <li>
+                Covers: what the program is, who it's for, why they created it,
+                and how to apply.
+              </li>
+              <li>
+                Director reviews, adjusts, and posts from their own LinkedIn
+                profile.
+              </li>
+              <li>
+                Suggested timing: early July, aligned with the first outreach
+                email.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 1.25rem">
+          <h3>How Directors Can Work With Us</h3>
+          <p
+            style="
+              font-size: 0.88rem;
+              color: var(--slate);
+              margin-bottom: 0.75rem;
+            "
+          >
+            Based on how this works with other clients (like AMLA), directors
+            have flexibility in how much they want to be involved:
+          </p>
+          <ul
+            style="
+              font-size: 0.88rem;
+              color: var(--slate);
+              padding-left: 1.25rem;
+              list-style: disc;
+            "
+          >
+            <li style="margin-bottom: 0.3rem">
+              <strong>Option A &mdash; Just send it:</strong> Use the
+              pre-drafted emails and post as-is. Fastest path.
+            </li>
+            <li style="margin-bottom: 0.3rem">
+              <strong>Option B &mdash; Give us a topic or audience:</strong>
+              Director shares who they're trying to reach or a specific angle.
+              Earned Impact drafts the content.
+            </li>
+            <li>
+              <strong>Option C &mdash; Polish my draft:</strong> Director writes
+              their own version. Earned Impact refines it for marketing clarity
+              and impact.
+            </li>
+          </ul>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--text-light);
+              margin-top: 0.75rem;
+            "
+          >
+            The key message to directors: this is a resource available to them,
+            not extra work. We do the drafting &mdash; they add their name and
+            credibility.
+          </p>
+        </div>
+      </div>
+
+      <!-- ACTION ITEMS -->
+      <div class="section" id="actions">
+        <h2 class="section-title">Action Items &amp; Next Steps</h2>
+        <p class="section-subtitle">
+          Prioritized by urgency. Critical items block the overall timeline if
+          delayed.
+        </p>
+
+        <div class="action-grid">
+          <div class="action-item">
+            <div class="action-priority priority-critical"></div>
+            <div class="action-content">
+              <h4>Collect at-a-glance briefs from Mirari and Carla</h4>
+              <p>
+                Use Bill's JPC brief as the template (included in the Program
+                Tiers tab). Need: who it's designed for, program format, why it
+                stands out, program promise. If not received by deadline, Earned
+                Impact drafts from existing website content as a fallback.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: June 27</span>
+                <span class="meta-owner-jesse">Owner: Jesse</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-critical"></div>
+            <div class="action-content">
+              <h4>
+                Get President Ramirez's sign-off on Bill's JPC program page
+              </h4>
+              <p>
+                This page is the template for the other two certificate pages.
+                Her feedback may affect the format. Best to lock this down
+                before standardizing all three.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: June 20</span>
+                <span class="meta-owner-jesse">Owner: Jesse</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-critical"></div>
+            <div class="action-content">
+              <h4>Build certificate landing page on current ICSW website</h4>
+              <p>
+                "Which program is right for you?" hub page with at-a-glance info
+                for all three certificates and "Learn More" links to each
+                program page. This is where the shared certificate ad campaign
+                will send traffic.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: June 30</span>
+                <span class="meta-owner-ei">Owner: Earned Impact</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-critical"></div>
+            <div class="action-content">
+              <h4>Standardize certificate program pages</h4>
+              <p>
+                Reformat Couples Therapy and Latinx Consultation pages to match
+                Bill's JPC page layout (navigation menu, organized sections,
+                at-a-glance). Content exists &mdash; it's a restructuring job,
+                not a rewrite.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: June 30</span>
+                <span class="meta-owner-ei">Owner: Earned Impact</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-warning"></div>
+            <div class="action-content">
+              <h4>Draft director outreach emails + LinkedIn posts</h4>
+              <p>
+                2&ndash;3 outreach emails and 1 LinkedIn post per director
+                (Bill, Carla, Mirari), pre-drafted in their voice. Deliver so
+                directors can begin sending by early July.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: June 30</span>
+                <span class="meta-owner-ei">Owner: Earned Impact</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-warning"></div>
+            <div class="action-content">
+              <h4>Set up shared certificate Google Ads campaign</h4>
+              <p>
+                One campaign with keywords that don't overlap with existing
+                MA/PhD campaigns. All ads point to the certificate landing page.
+                Ready to launch July 1 as MA budget frees up.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: July 1</span>
+                <span class="meta-owner-ei">Owner: Earned Impact</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-item">
+            <div class="action-priority priority-note"></div>
+            <div class="action-content">
+              <h4>Document outcomes for next year's planning</h4>
+              <p>
+                This is the first year marketing all three certificates. Track
+                what works (director emails vs. ads, landing page conversion,
+                keyword performance) so next year's cycle can start earlier with
+                data-backed decisions. All the infrastructure built this year
+                &mdash; landing page, standardized pages, outreach templates
+                &mdash; carries forward.
+              </p>
+              <div class="action-meta">
+                <span class="meta-deadline">Due: September 15</span>
+                <span class="meta-owner-ei">Owner: Earned Impact + Jesse</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      ICSW Fall 2026 Marketing Strategy &mdash; Prepared by Earned Impact
+      &mdash; June 11, 2026
+    </div>
+
+    <script>
+      document.querySelectorAll(".nav-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document
+            .querySelectorAll(".nav-tab")
+            .forEach((t) => t.classList.remove("active"));
+          document
+            .querySelectorAll(".section")
+            .forEach((s) => s.classList.remove("active"));
+          tab.classList.add("active");
+          document.getElementById(tab.dataset.tab).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
